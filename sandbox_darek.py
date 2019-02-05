@@ -37,10 +37,12 @@ while line != "":
 	grade = fields[7].strip('\n')
 	if first_name == desired_first_name and last_name == desired_last_name:
 		if grade == "A":
-			credit_hours = grade
+			grade_points = credit_hours * 4
 
-	print(f"last_name={last_name}, first_name={first_name}, credit_hours={credit_hours}, grade={grade}")
+		print(f"grade_points={grade_points}")
 	print(fields)
+
+
 	line = ""
 
 
