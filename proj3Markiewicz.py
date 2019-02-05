@@ -31,14 +31,14 @@ while line != "":
 	first_name = fields[2].strip( )
 	credit_hours = int(fields[6].strip( ))
 	grade = field[7]
-	if first_name == desired_first_name && last_name == desired_last_name:
-		if grade = "A":
+	if first_name == desired_first_name and last_name == desired_last_name:
+		if grade == "A":
 			credit_hours = grade_points * 4
-		else if grade = "B":
+		elif grade == "B":
 			credit_hours = grade_points * 3
-		else if grade = "C":
+		elif grade == "C":
 			credit_hours = grade_points * 2
-		else if grade = "D":
+		elif grade == "D":
 			credit_hours = grade_points * 1
 		else:
 			credit_hours = 0
