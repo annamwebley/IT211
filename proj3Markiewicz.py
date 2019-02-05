@@ -52,13 +52,11 @@ while line != "":
 		# End of if statement
 
 	total_credit_hours += credit_hours
-# Read the next line while will lead it to close
+# Read the next line
 	line = fin.readline( )
 	fin.close( )
 
-
-	print(f"last_name={last_name}, first_name={first_name}, credit_hours={credit_hours}, grade={grade}")
-	print(fields)
-	line = ""
+	gpa = total_grade_points / total_credit_hours
+	print(f"GPA for {first_name} {last_name} is {round(gpa, 2)}.")
 
 
