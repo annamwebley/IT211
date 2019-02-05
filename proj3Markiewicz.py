@@ -26,6 +26,7 @@ line = fin.readline( )
 
 # Begin while statement when the line is not empty
 while line != "":
+	grade_points = 0
 	fields = line.split(",")
 	last_name = fields[1].strip( )
 	first_name = fields[2].strip( )
@@ -33,7 +34,7 @@ while line != "":
 	grade = fields[7].strip('\n')
 	if first_name == desired_first_name and last_name == desired_last_name:
 		if grade == "A":
-			credit_hours = grade
+			credit_hours = grade_points
 
 	print(f"last_name={last_name}, first_name={first_name}, credit_hours={credit_hours}, grade={grade}")
 	print(fields)
