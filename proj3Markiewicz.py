@@ -53,8 +53,8 @@ while line != "":
 
 	total_credit_hours += credit_hours
 # Read the next line while will lead it to close
-line = fin.readline( )
-fin.close( )
+	line = fin.readline( )
+	fin.close( )
 
 
 	print(f"last_name={last_name}, first_name={first_name}, credit_hours={credit_hours}, grade={grade}")
