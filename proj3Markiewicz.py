@@ -30,28 +30,13 @@ while line != "":
 	last_name = fields[1].strip( )
 	first_name = fields[2].strip( )
 	credit_hours = int(fields[6].strip( ))
-	grade = fields[7].strip( )
+	grade = fields[7].strip('\n')
 	if first_name == desired_first_name and last_name == desired_last_name:
 		if grade == "A":
-			credit_hours = grade_points * 4
-		elif grade == "B":
-			credit_hours = grade_points * 3
-		elif grade == "C":
-			credit_hours = grade_points * 2
-		elif grade == "D":
-			credit_hours = grade_points * 1
-		else:
-			credit_hours = 0
-		# end of if statement 
+			credit_hours = grade
 
-		total_credit_hours = credit_hours
-		total_grade_points = grade_points
-		# end while loop
-
-		fin.close( )
-		# close input file
-
-		compute_gpa = total_grade_points / total_credit_hours
-		print(f"GPA for {first_name} {last_name} if {round(gpa, 2)}.")
+	print(f"last_name={last_name}, first_name={first_name}, credit_hours={credit_hours}, grade={grade}")
+	print(fields)
+	line = ""
 
 
