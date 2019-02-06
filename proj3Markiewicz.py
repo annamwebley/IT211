@@ -6,14 +6,11 @@
 # Fields in grade-records.txt input file:
 # stud_id, last_name, first_name, course_number, course_name, prof_name, credit_hours, grade
 
-#desired_first_name = input('What is your first name: ')
-#desired_last_name = input('What is your last name: ')
+desired_first_name = input('What is your first name: ')
+desired_last_name = input('What is your last name: ')
 
 total_credit_hours = 0
 total_grade_points = 0
-
-desired_first_name = "Raymond"
-desired_last_name = "Hoffman"
 
 # Opening text file that will read the first line
 
@@ -47,16 +44,17 @@ while line != "":
 			grade_points = credit_hours * 0
 
 		# End of if ... else statements 
-	else:
-		print("Please enter correct name")
-		# End of if statement
 
-	total_credit_hours += credit_hours
-# Read the next line
+		total_credit_hours += credit_hours
+		total_grade_points += grade_points
+		# End of if ... else statements 
+	
+	# Read the next line
 	line = fin.readline( )
-	fin.close( )
+fin.close( )
 
-	gpa = total_grade_points / total_credit_hours
-	print(f"GPA for {first_name} {last_name} is {round(gpa, 2)}.")
+gpa = total_grade_points / total_credit_hours
+print(f"GPA for {desired_first_name} {desired_last_name} is {round(gpa, 2)}.")
+
 
 
