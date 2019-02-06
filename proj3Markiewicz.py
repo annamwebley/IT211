@@ -6,8 +6,12 @@
 # Fields in grade-records.txt input file:
 # stud_id, last_name, first_name, course_number, course_name, prof_name, credit_hours, grade
 
+#input first and last name by the user
+
 desired_first_name = input('What is your first name: ')
 desired_last_name = input('What is your last name: ')
+
+#initialize total_credit_hours and total_grade_points
 
 total_credit_hours = 0
 total_grade_points = 0
@@ -25,6 +29,7 @@ fin.readline( )
 line = fin.readline( ) 
 
 # Begin while statement when the line is not empty
+
 while line != "":
 	fields = line.split(",")
 	last_name = fields[1].strip( )
@@ -51,7 +56,11 @@ while line != "":
 	
 	# Read the next line
 	line = fin.readline( )
+# Close the file
+
 fin.close( )
+
+# Compute the GPA and print result
 
 gpa = total_grade_points / total_credit_hours
 print(f"GPA for {desired_first_name} {desired_last_name} is {round(gpa, 2)}.")
