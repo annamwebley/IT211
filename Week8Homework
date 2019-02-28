@@ -1,0 +1,38 @@
+# Anna Markiewicz Unscramble Jumble Strings
+# Unscramble words and search for a word in the Unix dictionary
+
+# Define get_permutations method
+
+import itertools
+
+# Open dict.txt file
+file_handle = open("dict.txt", "r")
+
+# Begin get_permutations function
+def get_permutations(str):
+    letters = list(str)
+    # Open string of list where output will be
+    permutation_list = []
+    permutation_list_off_tuples = list(itertools.permutations(letters))
+    # Join the words together again
+    for word in permutation_list_off_tuples:
+        permutation_list.append(''.join(word))
+    return permutation_list
+
+
+if __name__ == "__main__":
+    # User enters word which will sort through dictionary text file
+    user_input = input('Please enter the word: ')
+    user_scrambled_words = get_permutations(user_input)
+    print(f"The scrambled words are: {user_scrambled_words}")
+    for line in file_handle:
+        # Get rid of the spaces
+        word = line.strip()
+        # For case sensitive letters
+        if word[0] == word[0].upper():
+            # print(f"debug: skipping uppercase word {word}")
+            continue
+        if word in user_scrambled_words:
+            print(f"found in the dict.txt: {word}")
+
+
